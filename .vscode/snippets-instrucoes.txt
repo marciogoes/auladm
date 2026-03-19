@@ -1,0 +1,12 @@
+[
+  // ══════════════════════════════════════════
+  // SNIPPETS PERSONALIZADOS — React Native
+  // Disciplina: Programação para Dispositivos Móveis
+  // Cole este arquivo em:
+  //   Ctrl+Shift+P → "Configure User Snippets" → javascript.json
+  // ══════════════════════════════════════════
+
+  // ── Como usar:
+  //    Digite o prefixo e pressione TAB
+  //    Use TAB para navegar entre os placeholders ($1, $2...)
+]

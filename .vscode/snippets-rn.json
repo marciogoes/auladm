@@ -1,0 +1,287 @@
+{
+  // ══════════════════════════════════════════════════════
+  // SNIPPETS PERSONALIZADOS — React Native / Expo
+  // Disciplina: Programação para Dispositivos Móveis
+  //
+  // Para ativar: Ctrl+Shift+P → "Configure User Snippets"
+  //              → Selecione "javascript" ou "javascriptreact"
+  //              → Cole todo este conteúdo
+  // ══════════════════════════════════════════════════════
+
+  // ── COMPONENTES ─────────────────────────────────────
+
+  "RN App Básico": {
+    "prefix": "rnapp",
+    "description": "App.js básico com StyleSheet e ScrollView",
+    "body": [
+      "import React from 'react';",
+      "import { View, Text, StyleSheet, ScrollView } from 'react-native';",
+      "",
+      "export default function App() {",
+      "  return (",
+      "    <ScrollView style={s.container} contentContainerStyle={s.inner}>",
+      "      <Text style={s.titulo}>$1</Text>",
+      "      $0",
+      "    </ScrollView>",
+      "  );",
+      "}",
+      "",
+      "const s = StyleSheet.create({",
+      "  container: { flex: 1, backgroundColor: '#0f172a' },",
+      "  inner: { padding: 20, paddingTop: 50, paddingBottom: 40 },",
+      "  titulo: { fontSize: 22, fontWeight: 'bold', color: '#38bdf8', textAlign: 'center', marginBottom: 20 },",
+      "});"
+    ]
+  },
+
+  "RN Componente funcional": {
+    "prefix": "rncomp",
+    "description": "Componente funcional React Native com StyleSheet",
+    "body": [
+      "import React from 'react';",
+      "import { View, Text, StyleSheet } from 'react-native';",
+      "",
+      "const ${1:MeuComponente} = ({ $2 }) => {",
+      "  return (",
+      "    <View style={s.container}>",
+      "      <Text style={s.texto}>$3</Text>",
+      "    </View>",
+      "  );",
+      "};",
+      "",
+      "const s = StyleSheet.create({",
+      "  container: { $4 },",
+      "  texto: { color: '#f8fafc' },",
+      "});",
+      "",
+      "export default ${1:MeuComponente};"
+    ]
+  },
+
+  // ── ESTADO ──────────────────────────────────────────
+
+  "useState completo": {
+    "prefix": "rnstate",
+    "description": "useState com nome semântico",
+    "body": [
+      "const [${1:valor}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:null});"
+    ]
+  },
+
+  "useEffect ao montar": {
+    "prefix": "rneffect",
+    "description": "useEffect que executa uma vez ao montar",
+    "body": [
+      "useEffect(() => {",
+      "  ${1:// código ao montar o componente}",
+      "  $0",
+      "}, []);"
+    ]
+  },
+
+  "useEffect com dependência": {
+    "prefix": "rneffectdep",
+    "description": "useEffect com array de dependências",
+    "body": [
+      "useEffect(() => {",
+      "  $1",
+      "}, [${2:dependencia}]);"
+    ]
+  },
+
+  // ── ASYNC ────────────────────────────────────────────
+
+  "Função async com try/catch": {
+    "prefix": "rnasync",
+    "description": "Função assíncrona com loading + erro + try/catch/finally",
+    "body": [
+      "const ${1:buscarDados} = async () => {",
+      "  setCarregando(true);",
+      "  setErro(null);",
+      "  try {",
+      "    const dados = await ${2:minhaApi()};",
+      "    setDados(dados);",
+      "  } catch (e) {",
+      "    setErro(e.message);",
+      "  } finally {",
+      "    setCarregando(false);",
+      "  }",
+      "};"
+    ]
+  },
+
+  // ── COMPONENTES DE UI ────────────────────────────────
+
+  "TouchableOpacity botão": {
+    "prefix": "rnbtn",
+    "description": "TouchableOpacity estilizado",
+    "body": [
+      "<TouchableOpacity",
+      "  style={s.btn${1:Primario}}",
+      "  onPress={${2:handlePress}}",
+      "  activeOpacity={0.8}",
+      ">",
+      "  <Text style={s.btnTexto}>${3:Botão}</Text>",
+      "</TouchableOpacity>"
+    ]
+  },
+
+  "TextInput controlado": {
+    "prefix": "rninput",
+    "description": "TextInput com estado controlado",
+    "body": [
+      "<TextInput",
+      "  style={s.input}",
+      "  placeholder=\"${1:Digite aqui...}\"",
+      "  placeholderTextColor=\"#475569\"",
+      "  value={${2:valor}}",
+      "  onChangeText={set${2/(.*)/${2:/capitalize}/}}",
+      "  keyboardType=\"${3|default,email-address,numeric,decimal-pad,phone-pad|}\"",
+      "  autoCapitalize=\"${4|none,sentences,words,characters|}\"",
+      "/>"
+    ]
+  },
+
+  "StyleSheet bloco": {
+    "prefix": "rnstyle",
+    "description": "Entrada de estilo no StyleSheet",
+    "body": [
+      "${1:nomeEstilo}: {",
+      "  $0",
+      "},"
+    ]
+  },
+
+  "Image com URI": {
+    "prefix": "rnimage",
+    "description": "Image com source URI e resizeMode",
+    "body": [
+      "<Image",
+      "  source={{ uri: ${1:url} }}",
+      "  style={s.${2:imagem}}",
+      "  resizeMode=\"${3|cover,contain,stretch,center|}\"",
+      "/>"
+    ]
+  },
+
+  // ── ESTRUTURAS JS ────────────────────────────────────
+
+  "Arrow function": {
+    "prefix": "af",
+    "description": "Arrow function com parâmetros",
+    "body": [
+      "const ${1:nomeFuncao} = (${2:params}) => {",
+      "  $0",
+      "};"
+    ]
+  },
+
+  "Arrow function inline": {
+    "prefix": "afi",
+    "description": "Arrow function de uma linha (retorno implícito)",
+    "body": [
+      "const ${1:nomeFuncao} = (${2:params}) => ${3:retorno};"
+    ]
+  },
+
+  "Destructuring de objeto": {
+    "prefix": "dest",
+    "description": "Destructuring de objeto",
+    "body": [
+      "const { ${1:prop1}, ${2:prop2} } = ${3:objeto};"
+    ]
+  },
+
+  "Map em array": {
+    "prefix": "rnmap",
+    "description": ".map() com key para renderização de lista",
+    "body": [
+      "{${1:array}.map((${2:item}) => (",
+      "  <View key={${2:item}.${3:id}} style={s.${4:card}}>",
+      "    <Text>${5:{${2:item}.nome}}</Text>",
+      "  </View>",
+      "))}"
+    ]
+  },
+
+  "Filter em array": {
+    "prefix": "rnfilter",
+    "description": ".filter() em array",
+    "body": [
+      "const ${1:resultado} = ${2:array}.filter(${3:item} => ${4:item.ativo});"
+    ]
+  },
+
+  "Reduce em array": {
+    "prefix": "rnreduce",
+    "description": ".reduce() para somar valores",
+    "body": [
+      "const ${1:total} = ${2:array}.reduce((acc, ${3:item}) => acc + ${3:item}.${4:valor}, 0);"
+    ]
+  },
+
+  "Template literal": {
+    "prefix": "tl",
+    "description": "Template literal com interpolação",
+    "body": [
+      "`${1:texto} \\${${2:variavel}}`"
+    ]
+  },
+
+  // ── FLEXBOX ──────────────────────────────────────────
+
+  "Flexbox row centralizado": {
+    "prefix": "flexrow",
+    "description": "Flexbox row com centralização",
+    "body": [
+      "flexDirection: 'row',",
+      "justifyContent: '${1|flex-start,flex-end,center,space-between,space-around,space-evenly|}',",
+      "alignItems: '${2|flex-start,flex-end,center,stretch|}',"
+    ]
+  },
+
+  "Flexbox column centralizado": {
+    "prefix": "flexcol",
+    "description": "Flexbox column centrado na tela",
+    "body": [
+      "flex: 1,",
+      "flexDirection: 'column',",
+      "justifyContent: 'center',",
+      "alignItems: 'center',"
+    ]
+  },
+
+  // ── PADRÕES COMPLETOS ─────────────────────────────────
+
+  "Card componente": {
+    "prefix": "rncard",
+    "description": "Componente de card reutilizável",
+    "body": [
+      "const ${1:Card} = ({ ${2:titulo}, ${3:descricao} }) => (",
+      "  <View style={s.card}>",
+      "    <Text style={s.cardTitulo}>{${2:titulo}}</Text>",
+      "    <Text style={s.cardDesc}>{${3:descricao}}</Text>",
+      "  </View>",
+      ");",
+      "",
+      "// Estilos do card:",
+      "// card: { backgroundColor: '#1e293b', borderRadius: 10, padding: 14, marginBottom: 8 },",
+      "// cardTitulo: { color: '#f8fafc', fontSize: 15, fontWeight: 'bold' },",
+      "// cardDesc: { color: '#94a3b8', fontSize: 13, marginTop: 4 },"
+    ]
+  },
+
+  "Loading + Erro + Lista": {
+    "prefix": "rnlista",
+    "description": "Padrão completo: loading / erro / lista renderizada",
+    "body": [
+      "{carregando && <ActivityIndicator color=\"#38bdf8\" />}",
+      "{erro && <Text style={s.erro}>{erro}</Text>}",
+      "{!carregando && !erro && ${1:dados}.map(${2:item} => (",
+      "  <View key={${2:item}.id} style={s.card}>",
+      "    <Text style={s.cardTexto}>{${2:item}.${3:nome}}</Text>",
+      "  </View>",
+      "))}"
+    ]
+  }
+}

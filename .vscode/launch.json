@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug no Android (Expo)",
+      "request": "launch",
+      "type": "reactnative",
+      "platform": "android",
+      "sourceMaps": true,
+      "outDir": "${workspaceFolder}/.expo"
+    },
+    {
+      "name": "Debug no iOS (Expo)",
+      "request": "launch",
+      "type": "reactnative",
+      "platform": "ios",
+      "sourceMaps": true
+    },
+    {
+      "name": "Anexar ao Expo (Attach)",
+      "request": "attach",
+      "type": "reactnative",
+      "platform": "exponent"
+    }
+  ]
+}
