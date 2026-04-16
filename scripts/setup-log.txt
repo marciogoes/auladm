@@ -1,0 +1,79 @@
+﻿**********************
+Início da transcrição do Windows PowerShell
+Hora de início: 20260319184114
+Nome de Usuário: COMPNOVO\marci
+Executar como Usuário: COMPNOVO\marci
+Nome da Configuração: 
+Computador: COMPNOVO (Microsoft Windows NT 10.0.26200.0)
+Aplicativo Host: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File setup.ps1
+ID do Processo: 21620
+PSVersion: 5.1.26100.7920
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.7920
+BuildVersion: 10.0.26100.7920
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+======================================
+ Setup Mobile - TADS 2026.1
+ Log: C:\Users\marci\OneDrive\Documentos\Projetos\projaulasdm\scripts\setup-log.txt
+======================================
+
+[INFO] Verificando winget...
+[ OK ] Winget: v1.28.220
+[INFO] Verificando Node.js...
+[ OK ] Node.js ja instalado: v22.20.0
+[INFO] Verificando Git...
+[ OK ] Git ja instalado: git version 2.51.0.windows.2
+[ OK ] Git configurado: marciogoes <goes.nascimento@gmail.com>
+[INFO] Verificando VS Code...
+Não é possível indexar em uma matriz nula.
+No C:\Users\marci\OneDrive\Documentos\Projetos\projaulasdm\scripts\setup.ps1:85 caractere:33
++     ok "VS Code ja instalado: $((code --version)[0])"
++                                 ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : NullArray
+Não é possível indexar em uma matriz nula.
+No C:\Users\marci\OneDrive\Documentos\Projetos\projaulasdm\scripts\setup.ps1:85 caractere:33
++     ok "VS Code ja instalado: $((code --version)[0])"
++                                 ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : NullArray
+
+[ OK ] VS Code ja instalado:
+[INFO] Instalando extensoes do VS Code...
+[ OK ] Extensao: dsznajder.es7-react-js-snippets
+[ OK ] Extensao: esbenp.prettier-vscode
+[ OK ] Extensao: dbaeumer.vscode-eslint
+[ OK ] Extensao: msjsdiag.vscode-react-native
+[ OK ] Extensao: formulahendry.auto-rename-tag
+[ OK ] Extensao: eamodio.gitlens
+[ OK ] Extensao: oderwat.indent-rainbow
+[ OK ] Extensao: naumovs.color-highlight
+[ OK ] Extensao: pkief.material-icon-theme
+[ OK ] Extensao: enkia.tokyo-night
+[INFO] Instalando ferramentas npm globais...
+[ OK ] eas-cli instalado
+[ OK ] typescript instalado
+[ OK ] Expo disponivel via: npx expo
+
+======================================
+ Concluido! Log salvo em:
+ C:\Users\marci\OneDrive\Documentos\Projetos\projaulasdm\scripts\setup-log.txt
+
+ Proximos passos:
+  1. Feche e reabra o terminal
+  2. Instale o Expo Go no celular
+  3. Para criar um projeto:
+     npx create-expo-app meu-app
+     cd meu-app
+     npx expo start
+======================================
+
+**********************
+Fim da transcrição do Windows PowerShell
+Hora de término: 20260319184425
+**********************
